@@ -22,6 +22,7 @@ For this project we are donig:
 using Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. 
 
 **Precipitation Analysis:** <br>
+
 •	Designing a query to retrieve the last 12 months of precipitation data. 
 
 •	Selecting only the date and prcp values.
@@ -33,11 +34,15 @@ using Python and SQLAlchemy to do basic climate analysis and data exploration of
 •	Using Pandas to print the summary statistics for the precipitation data.
 
 **Station Analysis:** <br>
+
 •	Designing a query to calculate the total number of stations.
+
 •	Designing a query to find the most active stations.
+
 •	Designing a query to retrieve the last 12 months of temperature observation data (TOBS).
 
 **Climate App:** <br>
+
 designing a Flask API based on the queries that we have just developed. 
 
 
