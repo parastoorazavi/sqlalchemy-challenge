@@ -17,11 +17,14 @@ For this project we are donig:
 4.  Daily Rainfall Average
 
 
+
 ## 🏁 Getting Started <a name = "getting_started"></a>
+
 
 **Climate Analysis and Exploration:** <br>
 
 using Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. 
+
 
 
 **Precipitation Analysis:** <br>
@@ -37,6 +40,7 @@ using Python and SQLAlchemy to do basic climate analysis and data exploration of
 •	Using Pandas to print the summary statistics for the precipitation data.
 
 
+
 **Station Analysis:** <br>
 
 •	Designing a query to calculate the total number of stations.
@@ -46,12 +50,15 @@ using Python and SQLAlchemy to do basic climate analysis and data exploration of
 •	Designing a query to retrieve the last 12 months of temperature observation data (TOBS).
 
 
+
 **Climate App:** <br>
 
 designing a Flask API based on the queries that we have just developed. 
 
 
+
 ## :doughnut:Bonus Part -	Temperature Analysis . <a name = "bonus_part"></a>
+
 
 **Temperature Analysis I:** <br>
 
@@ -60,6 +67,8 @@ designing a Flask API based on the queries that we have just developed.
 •	Identify the average temperature in June at all stations across all available years in the dataset. Do the same for December temperature.
 
 •	Use the t-test to determine whether the difference in the means, if any, is statistically significant. Will you use a paired t-test, or an unpaired t-test? Why?
+
+
 
 **Temperature Analysis II:** <br>
 
@@ -70,6 +79,7 @@ designing a Flask API based on the queries that we have just developed.
 •	Plotting the min, avg, and max temperature from your previous query as a bar chart.
     o	Using the average temperature as the bar height.
     o	Using the peak-to-peak (TMAX-TMIN) value as the y error bar (YERR).
+
 
 
 **Daily Rainfall Average:** <br>
