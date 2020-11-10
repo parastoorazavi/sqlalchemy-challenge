@@ -135,10 +135,10 @@ def start_date(start):
     info = []
     for date, min, avg, max in results:
         info_dict = {}
-        info_dict["date"] = date
-        info_dict["min"] = min
-        info_dict["avg"] = avg
-        info_dict["max"] = max
+        info_dict["DATE"] = date
+        info_dict["TMIN"] = min
+        info_dict["TAVG"] = avg
+        info_dict["TMAX"] = max
         info.append(info_dict)
 
     return jsonify(info)
