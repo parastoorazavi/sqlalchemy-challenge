@@ -55,7 +55,15 @@ using Python and SQLAlchemy to do basic climate analysis and data exploration of
 
 designing a Flask API based on the queries that we have just developed. 
 
+•	A dictionary using date as the key and prcp as the value.
 
+•	A list of stations from the dataset.
+
+•	The dates and temperature observations of the most active station for the last year of data.
+
+•	List of the minimum temperature, the average temperature, and the max temperature for all dates greater than and equal to the given date.
+
+•	List of the minimum temperature, the average temperature, and the max temperature for dates between the given start date and given end date.
 
 ## :doughnut:Bonus Part -	Temperature Analysis . <a name = "bonus_part"></a>
 
