@@ -113,12 +113,10 @@ filter(Measurement.station == active_station[0]).all()
 
     session.close()
 
-
     # Convert list of tuples into normal list
     info_active_station = list(np.ravel(results))
 
     return jsonify(info_active_station)
-
 
 @app.route("/api/v1.0/<start>")
 def start_date(start):
@@ -150,25 +148,26 @@ def start_date(start):
 def start_end_date(start, end):
     # Create our session (link) from Python to the DB
     session = Session(engine)
-
+    info = []
     """Return a list of minimum, average and max temperature for a given date"""
     # Query of min, max and avg temperature for all dates greater than and equal to the given date.
     results = session.query(Measurement.date,func.min(Measurement.tobs),\
          func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
-             filter(Measurement.date >= start,Measurement.date <= end).\
+             filter(Measurement.date >= start).filter(Measurement.date <= end).\
                  group_by(Measurement.date).all()
              
-    session.close()
     
 # Create a dictionary from the row data and append to a list of info
-    info = []
+    
     for date, min, avg, max in results:
         info_dict = {}
-        info_dict["date"] = date
-        info_dict["min"] = min
-        info_dict["avg"] = avg
-        info_dict["max"] = max
+        info_dict["DATE"] = date
+        info_dict["TMIN"] = min
+        info_dict["TAVG"] = avg
+        info_dict["TMAX "] = max
         info.append(info_dict)
+
+    session.close()
 
     return jsonify(info)
 
