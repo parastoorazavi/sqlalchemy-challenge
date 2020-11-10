@@ -127,7 +127,7 @@ def start_date(start):
     # Query of min, max and avg temperature for all dates greater than and equal to the given date.
     results = session.query(Measurement.date,func.min(Measurement.tobs),\
          func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
-             filter(Measurement.date >= start).group_by(Measurement.date).all()
+             filter(Measurement.date >= start).all()
              
     session.close()
     
@@ -148,28 +148,29 @@ def start_date(start):
 def start_end_date(start, end):
     # Create our session (link) from Python to the DB
     session = Session(engine)
-    info = []
-    """Return a list of minimum, average and max temperature for a given date"""
-    # Query of min, max and avg temperature for all dates greater than and equal to the given date.
-    results = session.query(Measurement.date,func.min(Measurement.tobs),\
+    
+    """Return a list of minimum, average and max temperature for a given start date and end date"""
+    # Query of min, max and avg temperature for dates between given start and end date.
+    results = session.query(func.min(Measurement.tobs),\
          func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
-             filter(Measurement.date >= start).filter(Measurement.date <= end).\
-                 group_by(Measurement.date).all()
-             
+             filter(Measurement.date >= start).filter(Measurement.date <= end).all()
+
+    session.close()        
     
 # Create a dictionary from the row data and append to a list of info
-    
-    for date, min, avg, max in results:
+    info = []
+
+    for min, avg, max in results:
         info_dict = {}
-        info_dict["DATE"] = date
         info_dict["TMIN"] = min
         info_dict["TAVG"] = avg
         info_dict["TMAX "] = max
         info.append(info_dict)
 
-    session.close()
+
 
     return jsonify(info)
+
 
 
 if __name__ == "__main__":
