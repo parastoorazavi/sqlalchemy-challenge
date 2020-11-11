@@ -108,7 +108,7 @@ def tobs():
 
     """Return a list of dates and temperature of the most active station for the last year"""
     # Query the dates and temperature observations of the most active station for the last year of data 
-    results = session.query(Measurement.date,Measurement.tobs).filter(Measurement.date >= query_date).\
+    results = session.query(Measurement.tobs).filter(Measurement.date >= query_date).\
 filter(Measurement.station == active_station[0]).all()
 
     session.close()
